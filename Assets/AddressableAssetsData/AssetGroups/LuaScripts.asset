@@ -17,12 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6134dd6dc8abf444fa541b3f7bb06e10
   m_SerializeEntries:
-  - m_GUID: 9bff7de7129785d4db7e2f5f237ba066
-    m_Address: Assets/LuaScripts/Controllers/Controller.txt
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1a7cd35e35ffcf84db3ab35bd688f307
-    m_Address: Assets/LuaScripts/GameState.txt
+  - m_GUID: 0fc597c51f768194a9c2aa45b31917cc
+    m_Address: Assets/LuaScripts
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
