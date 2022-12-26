@@ -22,30 +22,37 @@ public class AssetBundleEditor
     {
         var destDirectory = Path.Combine(Application.dataPath, "LuaScripts");
         var sourceDirectory = EditorUtility.OpenFolderPanel("Select Lua Folder", "", "LuaScripts");
-
-        // Clear file in destination path without root path
-        var directoryInfo = new DirectoryInfo(destDirectory);
-        foreach (FileInfo file in directoryInfo.GetFiles())
+        if (sourceDirectory == string.Empty)
         {
-            file.Delete();
+            //Do nothing.
         }
-        foreach (DirectoryInfo dir in directoryInfo.GetDirectories())
+        else
         {
-            dir.Delete(true);
+            // Clear file in destination path without root path
+            var directoryInfo = new DirectoryInfo(destDirectory);
+            foreach (FileInfo file in directoryInfo.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in directoryInfo.GetDirectories())
+            {
+                dir.Delete(true);
+            }
+
+            foreach (var directory in Directory.GetDirectories(sourceDirectory, "*", SearchOption.AllDirectories))
+            {
+                Directory.CreateDirectory(directory.Replace(sourceDirectory, destDirectory));
+            }
+
+            foreach (var file in Directory.GetFiles(sourceDirectory, "*.lua", SearchOption.AllDirectories))
+            {
+                var destFileName = Path.ChangeExtension(file.Replace(sourceDirectory, destDirectory), ".txt");
+                File.Copy(file, destFileName, true);
+            }
+
+            AssetDatabase.Refresh();
         }
 
-        foreach (var directory in Directory.GetDirectories(sourceDirectory, "*", SearchOption.AllDirectories))
-        {
-            Directory.CreateDirectory(directory.Replace(sourceDirectory, destDirectory));
-        }
-
-        foreach (var file in Directory.GetFiles(sourceDirectory, "*.lua", SearchOption.AllDirectories))
-        {
-            var destFileName = Path.ChangeExtension(file.Replace(sourceDirectory, destDirectory), ".txt");
-            File.Copy(file, destFileName, true);
-        }
-
-        AssetDatabase.Refresh();
     }
 
 }
