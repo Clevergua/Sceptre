@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: LuaScripts
   m_Data:
     m_SerializedData: []
-  m_GUID: 6134dd6dc8abf444fa541b3f7bb06e10
+  m_GUID: bb4796cb4145f354e939ab114e4874db
   m_SerializeEntries:
   - m_GUID: 0fc597c51f768194a9c2aa45b31917cc
     m_Address: Assets/LuaScripts
@@ -25,5 +25,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 7921f3211a945754f81b0e66d2b27ef8, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: c3f37c757a6256d429023cf890b03d98, type: 2}
-    - {fileID: 11400000, guid: e7112fe4dbb72e345a2e197f47747064, type: 2}
+    - {fileID: 11400000, guid: 2837e731867e330418ee6650e57dcc0f, type: 2}
+    - {fileID: 11400000, guid: 967f8fd8456c83c46aac3cead2bd998e, type: 2}
